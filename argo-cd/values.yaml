@@ -3,6 +3,23 @@ argo-cd:
     autoscaling:
       enabled: true
       minReplicas: 1
+    extraContainers: # Add argocd-lovely-plugin
+      - name: lovely-plugin
+        command: [/var/run/argocd/argocd-cmp-server]
+        image: ghcr.io/crumbhole/argocd-lovely-plugin-cmp:0.19.6
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 999
+        volumeMounts:
+          - mountPath: /var/run/argocd
+            name: var-files
+          - mountPath: /home/argocd/cmp-server/plugins
+            name: plugins
+          - mountPath: /tmp
+            name: tmp-dir
+    volumes:
+      - name: tmp-dir
+        emptyDir: {}
 
   dex:
     enabled: false # No need for dex in homelab

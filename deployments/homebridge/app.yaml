@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: homebridge
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: homebridge
+  syncPolicy: {}
+  source:
+    repoURL: https://github.com/etatsu/k3s-at-home.git
+    targetRevision: HEAD
+    path: apps/homebridge
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: epazote-charts-demo

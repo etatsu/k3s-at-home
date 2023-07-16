@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: homebridge
+  namespace: argocd
+spec:
+  description: Homebridge
+  sourceRepos:
+    - https://github.com/etatsu/k3s-at-home.git
+    - ghcr.io
+    - https://k8s-at-home.com/charts/
+  destinations:
+    - namespace: homebridge
+      server: https://kubernetes.default.svc

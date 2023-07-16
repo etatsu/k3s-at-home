@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/etatsu/k3s-at-home.git
     targetRevision: HEAD
-    path: apps/homebridge
+    path: ootb-apps/homebridge
     helm:
       valueFiles:
         - values.yaml

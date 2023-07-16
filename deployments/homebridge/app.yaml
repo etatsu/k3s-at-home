@@ -13,7 +13,7 @@ spec:
     targetRevision: HEAD
     path: ootb-apps/homebridge
     plugin:
-      name: lovely-plugin
+      name: argocd-lovely-plugin
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: homebridge

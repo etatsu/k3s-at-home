@@ -12,9 +12,8 @@ spec:
     repoURL: https://github.com/etatsu/k3s-at-home.git
     targetRevision: HEAD
     path: ootb-apps/homebridge
-    helm:
-      valueFiles:
-        - values.yaml
+    plugin:
+      name: lovely-plugin
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: homebridge

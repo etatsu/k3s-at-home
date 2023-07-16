@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: homebridge
-  namespace: argocd
+  namespace: homebridge
 spec:
   description: Homebridge
   sourceRepos:

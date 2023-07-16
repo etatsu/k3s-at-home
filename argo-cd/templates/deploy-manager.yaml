@@ -25,15 +25,15 @@ metadata:
   name: deployments-manager
   namespace: argo-cd
 spec:
-  description: App-of-Apps Manager
+  description: Deployments Manager (App-of-Apps)
   sourceRepos:
-    - https://github.com/etatsu/k3s-at-home.git
+    - '*'
   destinations:
     - namespace: argo-cd
       server: https://kubernetes.default.svc
   clusterResourceWhitelist:
     - group: '*'
-      kind: Namespace
+      kind: '*'
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'

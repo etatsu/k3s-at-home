@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: homebridge
-  namespace: homebridge
+  namespace: argo-cd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -17,4 +17,4 @@ spec:
         - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: epazote-charts-demo
+    namespace: homebridge

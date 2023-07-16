@@ -20,3 +20,8 @@ helm dep update argo-cd/
 kubectl create namespace argo-cd
 helm install -n argo-cd argo-cd argo-cd/
 ```
+
+### Access ArgoCD GUI
+
+Access the GUI via `kmaster.local:30080`. The user is `admin` and to get the password, run the following command:\
+`kubectl -n argo-cd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | printf "Password: $(base64 -d)\n"`

@@ -8,6 +8,8 @@ argo-cd:
     enabled: false # No need for dex in homelab
 
   server:
+    service:
+      type: NodePort
     autoscaling: 
       enabled: true
       minReplicas: 1

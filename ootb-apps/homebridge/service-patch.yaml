@@ -3,6 +3,4 @@ kind: Service
 metadata:
   name: patch-service-type
 spec:
-  template:
-    spec:
-      type: NodePort
+  type: NodePort

@@ -5,7 +5,7 @@ read -p "Enter the token from the master node: " token
 
 {
   # try installing k3s
-  curl -sfL https://get.k3s.io | K3S_URL=https://$kmaster_ip:6443 K3S_TOKEN=$token sh - &&
+  curl -sfL https://get.k3s.io | K3S_URL=https://$kmaster_ip:6443 K3S_TOKEN=$token sh -
 } || {
   # otherwise try setting cgroup_memory config
   echo -n " cgroup_memory=1 cgroup_enable=memory" >> /boot/cmdline.txt

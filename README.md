@@ -30,3 +30,4 @@ Access the GUI via `kmaster.local:30080`. The user is `admin` and to get the pas
 
 - [ ] Create Ansible configuration for new raspberry pi nodes
 - [ ] Allow access via domain names such as argocd.kmaster.local or endpoints like kmaster.local/argocd (if that is actually possible)
+- [ ] Create PV/PVC (persistent volume + claim) support, using storage on a local NAS

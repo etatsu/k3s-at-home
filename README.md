@@ -25,3 +25,8 @@ helm install -n argo-cd argo-cd argo-cd/
 
 Access the GUI via `kmaster.local:30080`. The user is `admin` and to get the password, run the following command:\
 `kubectl -n argo-cd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | printf "Password: $(base64 -d)\n"`
+
+# TODOs
+
+- [ ] Create Ansible configuration for new raspberry pi nodes
+- [ ] Allow access via domain names such as argocd.kmaster.local or endpoints like kmaster.local/argocd (if that is actually possible)
